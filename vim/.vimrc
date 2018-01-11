@@ -1,4 +1,4 @@
-"Vim configuration - Walker
+"Vim configuration - Walker 
 "--------------------
 set number "This turns on line numbers
 set noswapfile "Disable annoying swap files
@@ -25,6 +25,10 @@ map <F6> :!./flash<cr>
 map <F7> :tabp<cr>
 map <F8> :tabn<cr>
 map <F9> :tabedit
+
+"Tell vim not to jump over lines
+map <Down> gj
+map <Up> gk
 
 "Ctrl Driven Functions
 map <c-o> :w<cr>
