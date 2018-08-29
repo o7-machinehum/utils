@@ -15,8 +15,9 @@ color desert
 "colorscheme elflord
 
 "Function Hotkeys
+:map <F2> :setlocal spell! spelllang=en_us<CR>
 map <F3> :!./debug.sh<cr>
-map <F4> :!
+map <F4> :NERDTree<cr>
 
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
@@ -26,11 +27,11 @@ map <F7> :tabp<cr>
 map <F8> :tabn<cr>
 map <F9> :tabedit
 
+
 "Tell vim not to jump over lines (: and ! makes it work in insert mode)
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
-:map <F2> :setlocal spell! spelllang=en_us<CR>
 
 "Ctrl Driven Functions
 map <c-o> :w<cr>
@@ -57,3 +58,5 @@ set cursorline
 " 3. Type what you need
 " 4. <esc> <esc>
 
+execute pathogen#infect()
+call pathogen#helptags()
