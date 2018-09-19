@@ -64,6 +64,33 @@ https://developers.eos.io/eosio-cpp/docs/introduction-to-smart-contracts
 $ eosiocpp -o <input>.wast <input>.cpp
 $ eosiocpp -g <input>.abi <input>.cpp
 
+### Tables
+https://medium.com/coinmonks/using-table-on-eos-smart-contract-291f98312b80
+
+This is really good:
+https://www.youtube.com/watch?v=PamSV-WGcZo
+
+public:
+
+private:
+	// @abi table profiles i64 //<- This means the First 64bit veriable will be used to look it up.
+	struct profile{
+			// uint64_t key;
+			account_name account; // <-- Since account_name is typedefed to a uint64 we can use it as the key.
+			account_name primary_key() const {return account;}
+			EOSLIB_SERIALIZE(profile, (account))
+		};
+		
+	}
+	typedef eosio::multi_index<N(profiles), profile> profile_table // Create container of elements
+	// Since we don't want to instantuate this right away we typedef it. We can now use profile_table to instantaute it.
+
+
 ## Token Stuff
 - Get Balance
 $ cleos get currency balance <Contract> <AccountName>
+
+## Deps
+eosiolib/currency.hpp
+
+## Open Questions
