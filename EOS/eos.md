@@ -1,4 +1,5 @@
-https://developers.eos.io/eosio-cpp/docs/introduction-to-smart-contracts
+# Read This:
+https://medium.com/coinmonks/understanding-the-eosio-token-contract-87466b9fdca9
 
 # eosjs 
 - Getting Account Info
@@ -59,6 +60,7 @@ $ cleos push action <ContractName> <FunctionName> '[ "<arg1>", "<arg2>"]' -p <Co
 	- The -p is indicating that user eosio.token is authorising this action. 
 
 ## eosiocpp
+https://developers.eos.io/eosio-cpp/docs/introduction-to-smart-contracts
 $ eosiocpp -o <input>.wast <input>.cpp
 $ eosiocpp -g <input>.abi <input>.cpp
 
