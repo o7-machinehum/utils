@@ -27,11 +27,12 @@ map <F7> :tabp<cr>
 map <F8> :tabn<cr>
 map <F9> :tabedit
 
-
 "Tell vim not to jump over lines (: and ! makes it work in insert mode)
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
+nmap <silent> j gj
+nmap <silent> k gk
 
 "Ctrl Driven Functions
 map <c-o> :w<cr>
