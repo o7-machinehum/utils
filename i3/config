@@ -46,6 +46,10 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
+# Enable scrolling from keyboard
+bindsym $mod+n exec xdotool click 5
+bindsym $mod+m exec xdotool click 4 
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
