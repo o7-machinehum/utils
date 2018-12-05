@@ -1,0 +1,2 @@
+fat32 (This fixes permission issues)!
+  sudo mount /dev/sdb2 /home/storage -o umask=000

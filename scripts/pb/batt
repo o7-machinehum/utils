@@ -1,0 +1,9 @@
+#!/bin/bash
+    
+while [ 1 == 1 ]
+do
+   echo " capacity : " `cat /sys/class/power_supply/battery/capacity`
+   echo "  voltage : " `cat /sys/class/power_supply/battery/voltage_now`
+   echo "   status : " `cat /sys/class/power_supply/battery/status`
+   sleep 7
+done
