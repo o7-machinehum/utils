@@ -125,3 +125,5 @@ bar {
         status_command i3status
         tray_output primary
 }
+
+exec xrandr --output DVI-D-1 --same-as HDMI-1
