@@ -20,7 +20,10 @@ https://medium.com/coinmonks/understanding-the-eosio-token-contract-87466b9fdca9
 
 ## cleos
 Public: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+Private: 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 Password: PW5Jntuy8qhLM76vDGNEfRfyczWgcQQgkXnxKZN8FunnWmy1ydtfb
+
+HomePW: PW5KeRieFKqaKQh4kYXCRQYqF6Te3adiVJzgHLYTZnDrvhrPRdkya
 
 - cleos info
 $ cleos --url http://127.0.0.1:8888 get info
