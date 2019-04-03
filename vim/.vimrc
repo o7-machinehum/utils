@@ -44,6 +44,7 @@ set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+set linebreak "Don't wrap words
 
 "Line Wrap
 set whichwrap+=<,>,h,l,[,]
