@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo -e "for f in *\ *; do mv "$f" "${f// /_}"; done" \
+| dmenu
