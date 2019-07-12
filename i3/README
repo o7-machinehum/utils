@@ -1,1 +1,6 @@
 nmtui <- Connecting to wifi
+
+Reloading Config File
+---------------------
+i3-msg reload
+i3-msg restart

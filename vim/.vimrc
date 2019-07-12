@@ -17,11 +17,9 @@ color desert
 "Function Hotkeys
 :map <F2> :setlocal spell! spelllang=en_us<CR>
 map <F3> :!./debug.sh<cr>
-map <F4> :NERDTree<cr>
 
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
-"map <F6> :!make flash<cr>
 
 map <F7> :tabp<cr>
 map <F8> :tabn<cr>
