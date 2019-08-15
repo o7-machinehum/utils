@@ -5,6 +5,7 @@
 \usepackage{droid}
 \usepackage{pgf-pie}
 \usepackage{hyperref}
+\usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
 
 \usepackage{pgfpages}
 
@@ -107,20 +108,54 @@ Marketing is a necessary evil. I believe that strong marketing without strong te
 \end{frame}
 
 \section{Roadmap}
+
 \begin{frame}{Roadmap}
-\begin{itemize}
-\small
-\item{5/2018} Project conceptualised, first commit.
-\item{9/2018} Paper Complete, EOS blockchain selected.
-\item{1/2019} First item created on local testnet.
-\item{5/2019} Wallet/Engine Functional.
-\item{6/2019} Full stack functional test.
-\item{1/2020} Test net deployment.
-\item{3/2020} First World (Realm.one) deployment.
-\item{6/2020} Main net deployment.
-\end{itemize}
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, -latex] (-0.5,0) -- (10.5,0);
+%big ticks
+\foreach \x in {0,4,8}
+\draw (\x cm,5pt) -- (\x cm,-5pt);
+%little ticks
+\foreach \x in {1,2,3,5,6,7,9,10}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+%yr labels
+\foreach \x/\descr in {0/2018,4/2019,8/2020}
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (\x,0.4) {$\descr$};
+%events
+
+\draw[red, line width=4pt] (1.5,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Project Conceptulised};
+
+\draw[red, line width=4pt] (3,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Paper Complete};
+
+\draw[red, line width=4pt] (4,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First Item Created};
+
+\draw[red, line width=4pt] (5.75,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Wallet/Engine Functional};
+
+\draw[red, line width=4pt] (8,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Full Testnet Deployment};
+
+\draw[red, line width=4pt] (9,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First World Deployed};
+
+\draw[red, line width=4pt] (10,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Mainnet Deployment};
+
+
+% indigo, red, green, blue, purple, pink, orange, black
+
+
+%\foreach \x/\col/\event in
+%{0.25/85/1,2.25/55/2,4.25/35/3,8.25/15/4}
+%\draw[red!\col!blue, line width=4pt] 
+%(\x,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize event \event};
+
+\end{tikzpicture}
+\end{center}
 
 \end{frame}
+
+
 
 \section{Buisness / Token Model}
 \begin{frame}{Token Cap Table}
