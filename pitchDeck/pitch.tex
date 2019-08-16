@@ -1,12 +1,12 @@
-\documentclass[final, ngerman, xcolor=pdftex, dvipsnames, table, aspectratio=169, 14pt]{beamer}
+\documentclass[final, xcolor=pdftex, dvipsnames, table, aspectratio=169, 14pt]{beamer}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{droid}
 \usepackage{pgf-pie}
 \usepackage{hyperref}
 \usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
-
+\frenchspacing % Don't put two spaces after periods.
 \usepackage{pgfpages}
 
 \setbeameroption{hide notes}
@@ -56,7 +56,7 @@ Worlds is the economic backbone for a distributed MMO. Is enables players to mov
 
 \section{Assets}
 \begin{frame}{Assets}
-\href{https://www.youtube.com/watch?v=OrOZVr-j92A}{Full Stack Demo}
+\href{https://www.youtube.com/watch?v=OrOZVr-j92A}{Full Stack Demo}\label{vid}
 \\~\\
 
 \href{https://github.com/Machine-Hum/Worlds/raw/master/Worlds-Whitepaper/whitepaper.pdf}{Whitepaper}
@@ -67,44 +67,44 @@ Worlds is the economic backbone for a distributed MMO. Is enables players to mov
 
 \section{Mission}
 \begin{frame}{Mission}
-Worlds is going to be the first open and scaleable infrastructure for building an unbounded MMO. Upon the completion on this platform, proper incentivation will lead to the organic growth of the largest online game ever created.
+Worlds is going to be the first open and scaleable infrastructure for building an unbounded MMO. Upon the completion on this platform, proper incentivisation will lead to the organic growth of the largest online game ever created.
 \end{frame}
 
 \section{Problem}
 \begin{frame}{Problem}
-The economy of an open world comes down to game theory. If anyone can add code, then anyone can create unbounded resources thus creating an economic imbalance. The Worlds platform implements a smart contract to manage the resources ensuring that digital wealth cannot be created from nothing.  
+The economy of an open world comes down to game theory. Allowing anyone to add code to a game also allows them to create unbounded resources. This creates an economic imbalance. Worlds implements a smart contract to manage the resources ensuring that digital wealth cannot be created from nothing.  
 \end{frame}
 
 \section{Solution}
 \begin{frame}{Solution}
-Currently there are three main components to my ecosystem, the Worlds Smart Contract, the Worlds Engine (wallet) and the Minecraft fork. These three elements have been implemented and tested to demonstrate the entire stack. In the "Full Stack Demo" video listed above this is shown.
+Currently there are three main components to my ecosystem, the Worlds Smart Contract, the Worlds Engine (wallet) and the Minecraft fork. These three elements have been implemented and tested to demonstrate the entire stack. 
 \end{frame}
 
 \section{Target}
 \begin{frame}{Target}
-Initially smaller communities will be targeted, I have forked an open source version on Minecraft. The initial vision is several smaller Worlds to create a network and prove out the concept. Later on, developers will integrate their games into the universe.
+To get the ball rolling, smaller communities will be targeted, I have forked and integrated an open source version on Minecraft into Worlds. The initial vision is several smaller integrated Worlds to prove out the concept. This will form a network and demonstrate the capabilities of the platform.
 \end{frame}
 
 \section{Market}
 \begin{frame}{Market}
-Unlike several cyrpto projects, Worlds does not suffer from the chicken and egg problem. A small inplementation of ten or so Worlds maintained by independent parties would create an interesting experiance. The universe will scale from that.
+Unlike several cyrpto projects, Worlds does not suffer from the chicken and egg problem. A small implementation of ten or so Worlds maintained by independent parties would create an interesting experience. The universe will organically scale from that, funding (and later tokens) will be given to key developers at predetermined milestones.
 \end{frame}
 
 \section{Advantage}
 \begin{frame}{Advantage}
-My focus is full stack, by leveraging open source tech I will be able to build the game clients required to feed the initial fire. Existing project like Worlds are relying on game developers to take a leap of faith and pour valuable development time into building a game. In the beginning coding skills shouldn't be required to create a World, just someone to host a server and create the experience. 
+My focus is full stack, by leveraging open source tech I will be able to build the game clients required to feed the initial fire. Existing projects like Worlds are relying on game developers to take a leap of faith and pour valuable development time into using their ecosystem. In the beginning coding skills shouldn't be required to create a World, just someone to host a server and create the experience. 
 \end{frame}
 
 \begin{frame}{Advantage}
-My platform is 100\% open source and transparent. I want to build tools to enable my vision, and then use those tools to show people what's possible.
+My platform is 100\% open source and transparent. I want to build tools to enable my vision, and then use those tools to show people what is possible.
 \end{frame}
 
 \begin{frame}{Advantage}
-Worlds is built on EOS, therefor it has the rapid finality required for a game. 
+Worlds is built on EOS, which has the rapid finality required for a game. 
 \end{frame}
 
 \begin{frame}{Disadvantages}
-Marketing is a necessary evil. I believe that strong marketing without strong tech is a fundraising mechanism. While strong marketing with strong tech is a community building mechanism. I have been focusing on the technology up until now, however in the future once I build out the tools there will be a requirement for marketing. Without funding, success will be difficult.  
+I hate this slide. Marketing is a necessary evil. I believe that strong marketing without strong tech is a fundraising mechanism. While strong marketing with strong tech is a community building mechanism. I have been focusing on the technology up until now, however in the future once I build out the tools there will be a requirement for marketing. Without funding, success will be difficult.  
 \end{frame}
 
 \section{Roadmap}
@@ -127,62 +127,59 @@ Marketing is a necessary evil. I believe that strong marketing without strong te
 text depth=.5ex] at (\x,0.4) {$\descr$};
 %events
 
-\draw[red, line width=4pt] (1.5,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Project Conceptulised};
+\draw[chartreuse, line width=4pt] (1,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Project Conceptulised};
 
-\draw[red, line width=4pt] (3,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Paper Complete};
+\draw[chartreuse, line width=4pt] (2.25,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize EOS Selected / Mainnet launch};
 
-\draw[red, line width=4pt] (4,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First Item Created};
+\draw[chartreuse, line width=4pt] (3,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Paper Complete};
 
-\draw[red, line width=4pt] (5.75,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Wallet/Engine Functional};
+\draw[chartreuse, line width=4pt] (3.75,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First Item Created};
 
-\draw[red, line width=4pt] (8,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Full Testnet Deployment};
+\draw[chartreuse, line width=4pt] (4.2,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Minetest Forked};
 
-\draw[red, line width=4pt] (9,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First World Deployed};
+\draw[chartreuse, line width=4pt] (5.75,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Wallet/Engine Functional};
 
-\draw[red, line width=4pt] (10,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Mainnet Deployment};
+\draw[chartreuse, line width=4pt] (6.5,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Full Stack Demo};
 
+\draw[chartreuse, line width=4pt] (8,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Full Testnet Deployment};
 
-% indigo, red, green, blue, purple, pink, orange, black
+\draw[chartreuse, line width=4pt] (9,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize First World Deployed};
 
-
-%\foreach \x/\col/\event in
-%{0.25/85/1,2.25/55/2,4.25/35/3,8.25/15/4}
-%\draw[red!\col!blue, line width=4pt] 
-%(\x,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize event \event};
+\draw[chartreuse, line width=4pt] (10,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Mainnet Deployment};
 
 \end{tikzpicture}
 \end{center}
-
 \end{frame}
-
-
 
 \section{Buisness / Token Model}
 \begin{frame}{Token Cap Table}
 
-\begin{center}
 
+\begin{figure}[H]
+\begin{center}
 \begin{tikzpicture}
 \footnotesize
 \pie [rotate = 180, radius=1.5, color={indigo}, explode=0.2]
-{10/Kept for team,
+{10/Kept for the team,
  40/Given to developers, 
  10/Sold to Private Investment,
  40/Community Airdrop
 }
 \end{tikzpicture}
-\\
+\caption{Token Distribution}
 \end{center}
+\end{figure}
 The token cap model is geared towards stimulating initial project growth within the community.
 \end{frame}
 
 \section{Fundraising}
-
 \begin{frame}{Fundraising}
+
+\begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}
 \footnotesize
-\pie [square, radius=2.9, text=legend, after number = {k}, color={indigo, red, green, blue, purple, pink, orange, black}, sum=160]
+\pie [square, radius=2.9, text=legend, after number = {k}, color={indigo, red, tomato, blue, purple, pink, orange, black}, sum=160]
 {55/Personal Wage,
  10/Office Space, 
  5/Graphic Design,
@@ -193,20 +190,21 @@ The token cap model is geared towards stimulating initial project growth within 
  10/Server Fees
 }
 \end{tikzpicture}
-
-Fundraising target for the first year of development: \$160k.
+\caption{Fundraising target for year one: \textbf{\$160k}}
+\label{funding}
 \end{center}
+\end{figure}
 
 \end{frame}
 \begin{frame}{Fundraising}
-Until now, the development has been on my free time. I'm looking to raise seed funding to make this my full time job. Above is the breakdown for one year of development. I am currently offering 5\% of the token cap table of WOR. Following the depletion of funding I will be aiming to raise a series A.
+The existing development has been done on my free time. I'm looking to raise seed funding to make this my full time job. Figure \ref{funding} is the breakdown for one year of development. I'm offering 5\% of the total supply WOR for \$160k. Following the mainnet launch I will be raising a series A.
 \end{frame}
 
 \begin{frame}{Thanks}
-I greatly appriciate your consideration, I hope you have gained a better understanding of my project and can share the same vision. If you havn't watched the demo video, I would encurage yo to do so. Do not hesitate to reach out with further questions.
+I appreciate your consideration and hope you have gained a better understanding of my project. If you haven't watched the demo video, I would encourage you to do so. Please reach out with any questions or feedback!
 \\~\\
 \begin{center}
-Ryan Walker - Ryan.cjw@gmail.com
+Ryan Walker - Ryan.cjw@gmail.com - \href{https://www.youtube.com/watch?v=OrOZVr-j92A}{\textcolor{blue}{Demo}}
 \end{center}
 \end{frame}
 
