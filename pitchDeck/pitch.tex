@@ -5,6 +5,9 @@
 \usepackage{droid}
 \usepackage{pgf-pie}
 \usepackage{hyperref}
+\usepackage{multicol}
+\renewcommand{\sum}{170}
+
 \usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
 \frenchspacing % Don't put two spaces after periods.
 \usepackage{pgfpages}
@@ -16,8 +19,6 @@
 \setbeamerfont{note page}{size=\footnotesize}
 
 \usepackage{graphicx}
-
-
 \usetheme{DarkConsole}
 
 \begin{document}
@@ -25,7 +26,7 @@
 % The metadata of the presentation
 \title[Worlds]{Worlds}
 \subtitle[]{A Distributed MMO}
-\author[]{Ryan Walker\footnote{\texttt{ryan.cjw@gmail.com}}}
+\author[]{Ryan Walker\footnote{\texttt{ryan.cjw@gmail.com, \href{worldsmmo.com}{worldsmmo.com}}}}
 \date{\today} % Replace with date of the presentation
 
 
@@ -36,76 +37,89 @@
   }
 \end{frame}
 
-\section*{I'm a hidden Section}
-\begin{frame}{Table of Content} % This is the list of content with all the sections of the presentation
-    \small 
-    \tableofcontents
+\begin{frame}{Outline} % This is the list of content with all the sections of the presentation
+\small
+\begin{multicols}{2}
+\tableofcontents
+\end{multicols}
 \end{frame}
 
 \section{Identity}
 \begin{frame}{Identity}
-Worlds is the economic backbone for a distributed MMO. Is enables players to move digital assets and wealth throughout multiple games forming one massive congruent universe. 
-\end{frame}
-
-\begin{frame}{Identity}
-\centering
-\includegraphics[scale=0.15]{Header.png} 
-
-\textbf{Worlds} - A Distributed MMO
-\end{frame}
-
-\section{Assets}
-\begin{frame}{Assets}
-\href{https://www.youtube.com/watch?v=OrOZVr-j92A}{Full Stack Demo}\label{vid}
-\\~\\
-
-\href{https://github.com/Machine-Hum/Worlds/raw/master/Worlds-Whitepaper/whitepaper.pdf}{Whitepaper}
-\\~\\
-
-\href{worldsmmo.com}{Github}
+\[\includegraphics[scale=0.15, trim={0 4cm  0 4cm},clip]{Header.png}\] 
+Worlds is the economic backbone for a distributed massively multiplayer online game (MMO). Is enables players to move digital assets throughout multiple games forming one congruent universe. 
 \end{frame}
 
 \section{Mission}
 \begin{frame}{Mission}
-Worlds is going to be the first open and scaleable infrastructure for building an unbounded MMO. Upon the completion on this platform, proper incentivisation will lead to the organic growth of the largest online game ever created.
+Worlds will be the first open and scaleable infrastructure for building an unbounded MMO. This platform will lead to the organic growth of the largest online game ever created.
 \end{frame}
 
 \section{Problem}
 \begin{frame}{Problem}
-The economy of an open world comes down to game theory. Allowing anyone to add code to a game also allows them to create unbounded resources. This creates an economic imbalance. Worlds implements a smart contract to manage the resources ensuring that digital wealth cannot be created from nothing.  
+% The economy of an open world comes down to game theory. 
+Allowing any user to modify the source code of a game enables them to create unbounded resources; this creates an economic imbalance. 
+\\~\\
+To combat this, Worlds implements a smart contract to manage the resources ensuring that digital wealth cannot be created from nothing.  
 \end{frame}
 
-\section{Solution}
-\begin{frame}{Solution}
-Currently there are three main components to my ecosystem, the Worlds Smart Contract, the Worlds Engine (wallet) and the Minecraft fork. These three elements have been implemented and tested to demonstrate the entire stack. 
+\section{Infrastructure}
+\begin{frame}{Infrastructure}
+Worlds has two components: 
+\begin{enumerate}
+\item Worlds smart contract
+\item Worlds Engine (wallet)
+\end{enumerate}
+\vfill 
+I have forked an open source version of Minecraft to demonstrates the functionality of Worlds. See link below for a demonstration.
+\\~\\
+\footnotesize
+Full Stack Demo:
+\href{https://www.youtube.com/watch?v=OrOZVr-j92A}{youtube.com/watch?v=OrOZVr-j92A}\label{vid}
+%\\
+%Github:
+%\href{https://github.com/Machine-Hum/Worlds}{github.com/Machine-Hum/Worlds}
+
 \end{frame}
 
-\section{Target}
-\begin{frame}{Target}
-To get the ball rolling, smaller communities will be targeted, I have forked and integrated an open source version on Minecraft into Worlds. The initial vision is several smaller integrated Worlds to prove out the concept. This will form a network and demonstrate the capabilities of the platform.
+\begin{frame}{Infrastructure}
+Explain how anyone can build their own world and plug it into the universe.
 \end{frame}
 
-\section{Market}
-\begin{frame}{Market}
-Unlike several cyrpto projects, Worlds does not suffer from the chicken and egg problem. A small implementation of ten or so Worlds maintained by independent parties would create an interesting experience. The universe will organically scale from that, funding (and later tokens) will be given to key developers at predetermined milestones.
+\section{Startup}
+\begin{frame}{Startup}
+Smaller communities will initially be targeted. Simple open source games are a good starting point. The initial vision is several smaller integrated Worlds to prove the concept and build a community.
+\\~\\
+Worlds does not suffer from the chicken and egg problem. Even a small number of "Worlds" would create an interesting experience. Once a userbase is established, the universe will scale organically.
 \end{frame}
+
+
+%\section{Target}
+%\begin{frame}{Target}
+%To get the ball rolling, smaller communities will be targeted. Simple open source games such as Minecraft (which is currently implemented) are a good starting point. The initial vision is several smaller integrated Worlds to prove the concept and build a community.
+%\end{frame}
+%
+%\section{Market}
+%\begin{frame}{Market}
+%Unlike several cyrpto projects, Worlds does not suffer from the chicken and egg problem. A small implementation of ten or so Worlds maintained by independent parties would create an interesting experience. The universe will organically scale from that, funding (and later tokens) will be given to key developers at predetermined milestones.
+%\end{frame}
 
 \section{Advantage}
 \begin{frame}{Advantage}
-My focus is full stack, by leveraging open source tech I will be able to build the game clients required to feed the initial fire. Existing projects like Worlds are relying on game developers to take a leap of faith and pour valuable development time into using their ecosystem. In the beginning coding skills shouldn't be required to create a World, just someone to host a server and create the experience. 
+My focus is full stack: by leveraging open source tech, I will be able to build the game clients required to fuel the initial fire. Other similar projects rely on game developers to take a leap of faith and pour valuable development time into using their platform. By contrast, to develop in Worlds, coding skills aren't required. 
 \end{frame}
 
 \begin{frame}{Advantage}
-My platform is 100\% open source and transparent. I want to build tools to enable my vision, and then use those tools to show people what is possible.
+Worlds is 100\% open source and transparent. I want to build tools to enable my vision, and then use those tools to show people what is possible.
 \end{frame}
 
 \begin{frame}{Advantage}
 Worlds is built on EOS, which has the rapid finality required for a game. 
 \end{frame}
 
-\begin{frame}{Disadvantages}
-I hate this slide. Marketing is a necessary evil. I believe that strong marketing without strong tech is a fundraising mechanism. While strong marketing with strong tech is a community building mechanism. I have been focusing on the technology up until now, however in the future once I build out the tools there will be a requirement for marketing. Without funding, success will be difficult.  
-\end{frame}
+%\begin{frame}{Disadvantages}
+%I hate this slide. Marketing is a necessary evil. I believe that strong marketing without strong tech is a fundraising mechanism. While strong marketing with strong tech is a community building mechanism. I have been focusing on the technology up until now, however in the future once I build out the tools there will be a requirement for marketing. Without funding, success will be difficult.  
+%\end{frame}
 
 \section{Roadmap}
 
@@ -127,7 +141,7 @@ I hate this slide. Marketing is a necessary evil. I believe that strong marketin
 text depth=.5ex] at (\x,0.4) {$\descr$};
 %events
 
-\draw[chartreuse, line width=4pt] (1,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Project Conceptulised};
+\draw[chartreuse, line width=4pt] (1,0) -- +(0.5,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize Project Conceptualized};
 
 \draw[chartreuse, line width=4pt] (2.25,0) -- +(0.2,0)node[below left=2pt and 10pt,rotate=45]{\scriptsize EOS Selected / Mainnet launch};
 
@@ -166,7 +180,6 @@ text depth=.5ex] at (\x,0.4) {$\descr$};
  40/Community Airdrop
 }
 \end{tikzpicture}
-\caption{Token Distribution}
 \end{center}
 \end{figure}
 The token cap model is geared towards stimulating initial project growth within the community.
@@ -176,10 +189,11 @@ The token cap model is geared towards stimulating initial project growth within 
 \begin{frame}{Fundraising}
 
 \begin{figure}[H]
+Fundraising target for year one: \textbf{\$\sum k}
 \begin{center}
 \begin{tikzpicture}
 \footnotesize
-\pie [square, radius=2.9, text=legend, after number = {k}, color={indigo, red, tomato, blue, purple, pink, orange, black}, sum=160]
+\pie [square, radius=2.9, text=legend, after number = {k}, sum=\sum]
 {55/Personal Wage,
  10/Office Space, 
  5/Graphic Design,
@@ -187,25 +201,30 @@ The token cap model is geared towards stimulating initial project growth within 
  20/UI and UX ,
  10/Concept Art,
  5/Web Development,
- 10/Server Fees
+ 10/Server Fees,
+ 10/Security Audits
 }
 \end{tikzpicture}
-\caption{Fundraising target for year one: \textbf{\$160k}}
 \label{funding}
 \end{center}
 \end{figure}
 
 \end{frame}
 \begin{frame}{Fundraising}
-The existing development has been done on my free time. I'm looking to raise seed funding to make this my full time job. Figure \ref{funding} is the breakdown for one year of development. I'm offering 5\% of the total supply WOR for \$160k. Following the mainnet launch I will be raising a series A.
+The existing development has been done on my free time. I am looking to raise seed funding to make this my full time job. I am offering 5\% of the total supply WOR for \$\sum k. Following the mainnet launch, I will be raising a series A.
 \end{frame}
 
-\begin{frame}{Thanks}
-I appreciate your consideration and hope you have gained a better understanding of my project. If you haven't watched the demo video, I would encourage you to do so. Please reach out with any questions or feedback!
+\begin{frame}{Thank You}
+I appreciate your consideration. Please reach out with any questions or feedback!
+\\ \vfill
+\begin{minipage}{0.5\textwidth}
+\[\includegraphics[scale=0.25, trim={0 2cm  0 2cm},clip]{me.jpg}\] 
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+Ryan Walker \\ Ryan.cjw@gmail.com \\  
 \\~\\
-\begin{center}
-Ryan Walker - Ryan.cjw@gmail.com - \href{https://www.youtube.com/watch?v=OrOZVr-j92A}{\textcolor{blue}{Demo}}
-\end{center}
+\href{worldsmmo.com}{worldsmmo.com} \\ \href{https://www.youtube.com/watch?v=OrOZVr-j92A}{Demo}
+\end{minipage}
 \end{frame}
 
 \end{document}

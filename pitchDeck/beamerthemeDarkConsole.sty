@@ -41,8 +41,8 @@
   \setcounter{footnote}{1} % \dagger
   \noindent >\hbox{}>\hbox{}> {\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries\boldmath\inserttitle}
   \ifx\insertsubtitle\@empty\else\\>\hbox{}>\hbox{}> {\usebeamerfont{title}\usebeamercolor[fg]{title}\insertsubtitle}\fi~\\[1em]
-  Name: \insertauthor\ \ifx\insertinstitute\@empty\else(\insertinstitute)\fi\\
-  Datum: \insertdate
+  \insertauthor\ \ifx\insertinstitute\@empty\else(\insertinstitute)\fi\\
+  \insertdate
   \renewcommand\thefootnote{\arabic{footnote}}
   \setcounter{footnote}{0}
 }
