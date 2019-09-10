@@ -9,6 +9,7 @@ set paste "Turn on paste mode
 syntax on
 
 color desert
+set rnu
 
 "colorscheme default
 "colorscheme afterglow
