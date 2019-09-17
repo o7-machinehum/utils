@@ -12,6 +12,7 @@ TF Derivation
 
 ## Linux
 https://wiki.debian.org/Suspend
+https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783
 
 ## Applications
 retext - viewing .md files
