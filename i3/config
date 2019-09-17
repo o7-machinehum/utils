@@ -1,8 +1,16 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod1
+
+gaps inner 10 
+gaps outer 5
+
+# Set the wallpaper
+exec_always feh --randomize --bg-fill ~/wlkrUtils/wallpaper/*
+
+# Ensure compton is installed
+exec_always --no-startup-id compton --config /usr/bin/compton 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -27,10 +35,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move focused window
-#bindsym $mod+Shift+h move left
-#bindsym $mod+Shift+j move down
-#bindsym $mod+Shift+k move up
-#bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+w split h
@@ -40,11 +48,6 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
 
 # Enable scrolling from keyboard
 bindsym $mod+n exec xdotool click 5
