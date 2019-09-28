@@ -6,6 +6,10 @@
 # adduser machinehum sudo
 # Then, reboot
 
+# /set irc.look.smart_filter on
+# /filter add irc_smart * irc_smart_filter *
+
+
 sudo apt install -y git make vim python3 gcc i3 chromium weechat zathura ranger snap gparted openocd gdb-multiarch gcc-arm-none-eabi texlive-full doxygen octave xfce4-terminal compton feh
 
 # Install brave
