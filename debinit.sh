@@ -46,3 +46,6 @@ git config --global core.editor "vim"
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.d difftool
+git config --global credential.helper "cache --timeout=3600"
+
+echo set auto-load safe-path / > ~/.gdbinit
