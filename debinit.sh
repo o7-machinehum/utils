@@ -15,9 +15,11 @@ sudo apt install -y git make vim python3 gcc i3 chromium weechat zathura ranger 
 # Install brave
 sudo apt install apt-transport-https curl
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ trusty main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-trusty.list
-sudo apt update
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ trusty main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-trusty.list sudo apt update
 sudo apt install brave-browser
+
+# Install git submodules
+git submodule update --init --recursive
 
 cd xmodmap
 ./link.sh
@@ -37,6 +39,15 @@ cd ..
 
 cd screen
 ./updateScreenrcPC.sh
+cd ..
+
+
+cd patch
+./init.sh
+cd ..
+
+cd i3 
+./update.sh
 cd ..
 
 cd ~
