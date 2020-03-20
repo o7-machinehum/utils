@@ -35,3 +35,7 @@ The above two points would make a dynamic game. I think adding these two would b
 ## MVP (Interoperability)
 - Load player info from blockchain
 - Implementing neighboring servers.
+
+## Write Pain
+https://www.healthline.com/health/chronic-pain/wrist-and-hand-stretches#yoga
+
