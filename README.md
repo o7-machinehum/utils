@@ -39,3 +39,16 @@ The above two points would make a dynamic game. I think adding these two would b
 ## Write Pain
 https://www.healthline.com/health/chronic-pain/wrist-and-hand-stretches#yoga
 
+## Mobile console
+Hardware auth (needed?)
+
+Advantages
+- Future Devs know who bought in
+- Don't need a centalised repo
+- Syphon group funds back to the specifc developers
+- Deosit a certain amount at the start
+  - Proff would allow you to play certain games
+  - At the end all the funds would get distributed as a PEC
+
+## Distance of transmission
+https://en.wikipedia.org/wiki/Line-of-sight_propagation#Radio_horizon

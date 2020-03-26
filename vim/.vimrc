@@ -17,7 +17,6 @@ set rnu
 
 "Function Hotkeys
 :map <F2> :setlocal spell! spelllang=en_us<CR>
-map <F3> :!./debug.sh<cr>
 
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
@@ -36,9 +35,6 @@ nmap <silent> k gk
 "Ctrl Driven Functions
 map <c-o> :w<cr>
 
-"Tab Stuff
-set shiftwidth=2
-set tabstop=2
 
 set ai "Auto indent
 set si "Smart indent
@@ -49,25 +45,27 @@ set linebreak "Don't wrap words
 set whichwrap+=<,>,h,l,[,]
 
 "Cursorline
-set cursorline
+" set cursorline
 
-
-"Notes
-"Column Select
-"	1. ctrl + v
-"	2. after selected, "c"
-" 3. Type what you need
-" 4. <esc> <esc>
-
-filetype plugin indent on
-" show existing tab with 2 spaces width
-set tabstop=2
-
-" when indenting with '>', use 2 spaces width
-set shiftwidth=2
-
-" On pressing tab, insert 4 spaces
+" virtual tabstops using spaces
+set shiftwidth=4
+set softtabstop=4
 set expandtab
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    set shiftwidth=4
+    set softtabstop=0
+    set noexpandtab
+    echo "Tabs are off (Normal mode)"
+  else
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
+    echo "Tabs are on (Dumb mode)"
+  endif
+endfunction
+nmap <F3> mz:execute TabToggle()<CR>'z
 
-" Make the wrapped lines tab in
-set breakindent
+" filetype plugin indent on
+
