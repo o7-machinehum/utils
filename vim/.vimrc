@@ -1,4 +1,4 @@
-"Vim configuration - Walker 
+"Vim configuration - Walker
 "--------------------
 set number "This turns on line numbers
 set noswapfile "Disable annoying swap files
@@ -17,6 +17,7 @@ set rnu
 
 "Function Hotkeys
 :map <F2> :setlocal spell! spelllang=en_us<CR>
+map <F3> :s/foo/bar/g 
 
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
@@ -32,40 +33,32 @@ nmap <silent> <Up> gk
 nmap <silent> j gj
 nmap <silent> k gk
 
-"Ctrl Driven Functions
+" Ctrl Driven Functions
 map <c-o> :w<cr>
 
+set ai " Auto indent
+set si " Smart indent
+set wrap " Wrap lines
+set linebreak " Don't wrap words
+set breakindent " Tab Wrapped lines
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
-set linebreak "Don't wrap words
-
-"Line Wrap
+" Line Wrap
 set whichwrap+=<,>,h,l,[,]
 
-"Cursorline
-" set cursorline
+set nocursorline
 
 " virtual tabstops using spaces
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-" allow toggling between local and default mode
-function TabToggle()
-  if &expandtab
-    set shiftwidth=4
-    set softtabstop=0
-    set noexpandtab
-    echo "Tabs are off (Normal mode)"
-  else
-    set shiftwidth=4
-    set softtabstop=4
-    set expandtab
-    echo "Tabs are on (Dumb mode)"
-  endif
-endfunction
-nmap <F3> mz:execute TabToggle()<CR>'z
+set ts=4 sts=4 et
 
-" filetype plugin indent on
+filetype plugin indent on
 
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+set textwidth=80 " Set text to wrap. To format text use the :gq
+
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
