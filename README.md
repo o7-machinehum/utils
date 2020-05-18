@@ -52,3 +52,7 @@ Advantages
 
 ## Distance of transmission
 https://en.wikipedia.org/wiki/Line-of-sight_propagation#Radio_horizon
+
+
+## TESTNET Phrase
+gallery nature capital rabbit security letter middle smile desert index discover mango

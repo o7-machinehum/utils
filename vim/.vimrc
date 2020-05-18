@@ -32,9 +32,10 @@ map <F3> :s/foo/bar/g
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
 
-map <F7> :tabp<cr>
-map <F8> :tabn<cr>
-map <F9> :tabedit
+" OLD
+" map <F7> :tabp<cr>
+" map <F8> :tabn<cr>
+" map <F9> :tabedit
 
 "Tell vim not to jump over lines (: and ! makes it work in insert mode)
 nmap <silent> <Down> gj
@@ -47,7 +48,7 @@ nmap <silent> k gk
 map <c-o> :w<cr>
 
 set ai " Auto indent
-set si " Smart indent
+" set si " Smart indent
 set wrap " Wrap lines
 set linebreak " Don't wrap words
 set breakindent " Tab Wrapped lines
@@ -63,8 +64,6 @@ set softtabstop=4
 set expandtab
 set ts=4 sts=4 et
 
-filetype plugin indent on
-
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
@@ -72,3 +71,13 @@ set textwidth=80 " Set text to wrap. To format text use the :gq
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
+
+" Custom Commands
+command B !./build_slides.sh
+command R !./run.sh
+command C !cargo build 
+command! -complete=file -nargs=1 T tabedit <args>
+
+" Show the filename
+set laststatus=2
+
