@@ -13,7 +13,7 @@ exec_always feh --randomize --bg-fill ~/wlkrUtils/wallpaper/*
 exec volumeicon
 
 # Ensure compton is installed
-exec_always --no-startup-id compton --config /usr/bin/compton 
+exec_always --no-startup-id compton
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -128,8 +128,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status | ~/wlkrUtils/deps/i3status-bittrex-ticker/i3status_wrapper.py 
+        status_command i3status 
         tray_output primary
 }
 
 exec xrandr --output DVI-D-1 --same-as HDMI-1
+
+exec i3 --shmlog-size=26214400
+
+for_window [class="realm-one"] floating enable
