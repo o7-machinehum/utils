@@ -1,2 +1,0 @@
-all:
-	pdflatex pitch.tex

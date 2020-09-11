@@ -1,6 +1,23 @@
 # Walker Utilities
 Basically the cheat sheet to my life.
 
+## Worlds
+- Prove that people want it
+- Taking small steps toward the thing you want to do
+- Seperate sleezy from not sleezy
+
+## General notes
+https://www.kickstarter.com/blog/before-you-work-with-a-marketing-service-consider-this
+
+- Think about projects that link togeather because if you want to something
+badass it's going to take 40 years.
+
+- Staying motivated 
+    - You don't stay motivated you just do things when you need to do them
+
+- Build self confidence by doing things people have never done before. 
+
+
 ## Synths
 TF Derivation
 - https://rk2log.wordpress.com/2018/06/03/deriving-the-transfer-function-for-a-bridged-t-network-pt-1/
@@ -19,16 +36,19 @@ https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783
 retext - viewing .md files
 
 # Worlds / Realm.one
-The advantage we have over other games is a hardcore networking effect. The MVP should focus on emphasizing element itself. This means the ability to fork the game and get started with a server fast.
+The advantage we have over other games is a hardcore networking effect. The MVP
+should focus on emphasizing element itself. This means the ability to fork the
+game and get started with a server fast.
 
 ## MVP (Game itself)
 - Attacking
-  - When a player does a melee attack, it should show through the sprites that look like they're attacking
-- NPC
+  - When a player does a melee attack, it should show through the sprites that
+  look like they're attacking - NPC
   - Monster AI. They should walk around and attack players
 - Player HP should be shown using hearts like zelda
 
-The above two points would make a dynamic game. I think adding these two would be interesting. Should be the next steps.
+The above two points would make a dynamic game. I think adding these two would
+be interesting. Should be the next steps.
 
 - Players exp
   - Players skills depend on their levels
@@ -61,7 +81,6 @@ gallery nature capital rabbit security letter middle smile desert index discover
 # Arch Stuff
 ## Starting the SSH server
 systemctl start sshd.service
-
 
 # CPU Stuff
 [This](https://wiki.debian.org/CpuFrequencyScaling) contains a lot of really
