@@ -4,3 +4,6 @@
 [submodule "deps/i3status-bittrex-ticker"]
 	path = deps/i3status-bittrex-ticker
 	url = https://github.com/mfrlin/i3status-bittrex-ticker
+[submodule "mop"]
+	path = mop
+	url = https://github.com/mop-tracker/mop

@@ -1,11 +1,13 @@
 # Walker Utilities
 Basically the cheat sheet to my life.
 
+# IRC
+/msg alis list * -min 100 -topic engineering
 
 # Tech
 It's short for Technology
 
-## Links
+## Linux
 [Buiilding w/ Embedded Linux](https://jaycarlson.net/embedded-linux/)
 
 ## Companies
@@ -22,11 +24,8 @@ It's short for Technology
 [Python+openScad](https://github.com/SolidCode/SolidPython)
 [Badass GearBox](https://hackaday.io/project/159404-opentorque-actuator)
 [Wrist](https://www.thingiverse.com/thing:3941099)
-
-## Worlds
-- Prove that people want it
-- Taking small steps toward the thing you want to do
-- Seperate sleezy from not sleezy
+[FreeCAD - Sketched External](https://wiki.freecadweb.org/Sketcher_External)
+[Precision Liquid Dispenser](https://github.com/koendv/shenzhen_style)
 
 
 # Buisness
@@ -45,7 +44,7 @@ badass it's going to take 40 years.
 - Vision and purpose of the company
     - Products fall out of this
 
-- Build the community first and then kickstarter
+- *Build the community first and then kickstarter*
 
 
 ## Applications
