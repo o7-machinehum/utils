@@ -18,7 +18,6 @@ set paste "Turn on paste mode
 "Turn on Syntax
 syntax on
 
-color desert
 set rnu
 
 "colorscheme default
