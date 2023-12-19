@@ -31,11 +31,6 @@ map <F3> :s/foo/bar/g
 map <F5> :!make<cr>
 map <F6> :!./flash<cr>
 
-" OLD
-" map <F7> :tabp<cr>
-" map <F8> :tabn<cr>
-" map <F9> :tabedit
-
 "Tell vim not to jump over lines (: and ! makes it work in insert mode)
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
@@ -57,11 +52,11 @@ set whichwrap+=<,>,h,l,[,]
 
 set nocursorline
 
-" virtual tabstops using spaces
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set ts=4 sts=4 et
+" For Tabs
+" set autoindent noexpandtab tabstop=4 shiftwidth=4
+
+" For Spaces 
+set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
@@ -80,3 +75,4 @@ command! -complete=file -nargs=1 T tabedit <args>
 " Show the filename
 set laststatus=2
 
+set clipboard=unnamed

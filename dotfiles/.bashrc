@@ -62,3 +62,4 @@ alias git-name-il="git config --global user.name 'Ryan Walker' ; git config --gl
 alias git-name-github="git config --global user.name 'o7-machinehum' ; git config --global user.email ryan.cjw@gmail.com"
 alias git-name-zephyr="git config --global user.name 'Ryan Walker' ; git config --global user.email ryan.cjw@gmail.com"
 
+export OPENAI_API_KEY='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'
