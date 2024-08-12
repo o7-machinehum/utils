@@ -8,7 +8,7 @@ gaps inner 10
 gaps outer 5
 
 # Set the wallpaper
-exec_always feh --randomize --bg-fill ~/wlkrUtils/wallpaper/*
+exec_always feh --randomize --bg-fill ~/utils/wallpaper/*
 
 # Add the little icon for volume
 exec volumeicon
@@ -24,8 +24,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec termite
-bindsym $mod+Return exec xterm -d $(xcwd)
+# https://aur.archlinux.org/packages/xcwd-git
+bindsym $mod+Return exec "alacritty --working-directory `xcwd`"
 
 # kill focused window
 bindsym $mod+Shift+q kill
