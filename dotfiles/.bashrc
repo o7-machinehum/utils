@@ -53,6 +53,11 @@ wlkr-rem-colour() {
     cat $1 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
 }
 
+# 0 -> 100
+wlkr-set-brightness() {
+    echo $((68*$1))| sudo tee /sys/class/backlight/intel_backlight/brightness
+}
+
 alias pastry="curl --data-binary @- https://paste.rs"
 alias cscope="cscope -p10 "
 
