@@ -26,8 +26,6 @@ syntax on
 
 set rnu
 
-colorscheme desert
-
 "Function Hotkeys
 :map <F2> :setlocal spell! spelllang=en_us<CR>
 map <F3> :s/foo/bar/g 
@@ -81,3 +79,5 @@ nnoremap H <C-w>h
 nnoremap J <C-w>j
 nnoremap K <C-w>k
 nnoremap L <C-w>l
+
+autocmd BufWritePre * %s/\s\+$//e

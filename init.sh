@@ -12,4 +12,4 @@ mkdir -p ~/.config/alacritty
 
 ln -s $repo_dir/dotfiles/i3/config ~/.config/i3/config
 ln -s $repo_dir/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-ln -s $repo_dir/dotfiles/vimrc ~/.config/vim/vimrc
+ln -s $repo_dir/dotfiles/vimrc ~/.vimrc
