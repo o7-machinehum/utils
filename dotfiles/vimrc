@@ -10,12 +10,6 @@
 "          ░   ░         ░      ░     ░ ░
 "         ░                           ░
 
-" Notes
-" Ctrl + w + = (Reddraw window)
-" sp fname (horizontal split)
-" vsp fname (vert split)
-
-
 set number "This turns on line numbers
 set noswapfile "Disable annoying swap files
 
@@ -23,12 +17,13 @@ set paste "Turn on paste mode
 
 "Turn on Syntax
 syntax on
+set re=0
 
 set rnu
 
 "Function Hotkeys
 :map <F2> :setlocal spell! spelllang=en_us<CR>
-map <F3> :s/foo/bar/g 
+map <F3> :s/foo/bar/g
 map <F5> :!make<cr>
 map <F6> :!make flash<cr>
 
@@ -39,9 +34,6 @@ nmap <silent> <Up> gk
 nmap <silent> j gj
 nmap <silent> k gk
 
-" Ctrl Driven Functions
-map <c-o> :w<cr>
-
 set ai " Auto indent
 " set si " Smart indent
 set wrap " Wrap lines
@@ -51,21 +43,16 @@ set breakindent " Tab Wrapped lines
 " Line Wrap
 set whichwrap+=<,>,h,l,[,]
 
-set nocursorline
-
 " For Tabs
 " set autoindent noexpandtab tabstop=4 shiftwidth=4
 
-" For Spaces 
+" For Spaces
 set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
 set textwidth=80 " Set text to wrap. To format text use the :gq
-
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
 
 " Show the filename
 set laststatus=2
