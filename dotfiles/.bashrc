@@ -5,20 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
 
 # General shortcuts
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias rm='trash-put'
-
-# HDMI screen stuff
-alias hdmi-on='xrandr --output HDMI-0 --same-as DVI-D-0 ; xrandr --output HDMI-0 --mode 1920x1080'
-alias hdmi-off='xrandr --output HDMI-0 --off'
-
-# Start the SSH server
-alias sshd-start='systemctl start sshd.service'
 
 # CPU Power
 alias wlkr-cpu-on-demand='sudo cpupower frequency-set -g ondemand'
@@ -67,4 +59,4 @@ alias git-name-il="git config --global user.name 'Ryan Walker' ; git config --gl
 alias git-name-github="git config --global user.name 'o7-machinehum' ; git config --global user.email ryan.cjw@gmail.com"
 alias git-name-zephyr="git config --global user.name 'Ryan Walker' ; git config --global user.email ryan.cjw@gmail.com"
 
-export OPENAI_API_KEY='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'
+alias vi=vim

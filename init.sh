@@ -5,6 +5,7 @@ ln -s $repo_dir/dotfiles/.Xmodmap ~/.Xmodmap
 ln -s $repo_dir/dotfiles/.xinitrc ~/.xinitrc
 ln -s $repo_dir/dotfiles/.bashrc ~/.bashrc
 ln -s $repo_dir/dotfiles/.Xresources ~/.Xresources
+ln -s $repo_dir/dotfiles/.bash_profile ~/.bash_profile
 
 mkdir -p ~/.config/vim
 mkdir -p ~/.config/i3
