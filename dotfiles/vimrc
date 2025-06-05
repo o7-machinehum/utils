@@ -49,15 +49,15 @@ set whichwrap+=<,>,h,l,[,]
 " For Spaces
 set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
 
 set textwidth=80 " Set text to wrap. To format text use the :gq
 
 " Show the filename
 set laststatus=2
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set hlsearch
 
 autocmd VimResized * wincmd =

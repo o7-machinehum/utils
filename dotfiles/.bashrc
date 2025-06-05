@@ -60,3 +60,6 @@ alias git-name-github="git config --global user.name 'o7-machinehum' ; git confi
 alias git-name-zephyr="git config --global user.name 'Ryan Walker' ; git config --global user.email ryan.cjw@gmail.com"
 
 alias vi=vim
+
+export TERM=xterm-256color
+

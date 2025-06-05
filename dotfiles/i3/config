@@ -2,9 +2,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # set $mod Mod1
-set $mod Mod4  
+set $mod Mod4
 
-gaps inner 10 
+gaps inner 10
 gaps outer 5
 
 # Set the wallpaper
@@ -26,6 +26,7 @@ floating_modifier $mod
 # start a terminal
 # https://aur.archlinux.org/packages/xcwd-git
 bindsym $mod+Return exec "alacritty --working-directory `xcwd`"
+# bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -56,7 +57,7 @@ bindsym $mod+f fullscreen toggle
 
 # Enable scrolling from keyboard
 bindsym $mod+n exec xdotool click 5
-bindsym $mod+m exec xdotool click 4 
+bindsym $mod+m exec xdotool click 4
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -130,7 +131,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status 
+        status_command i3status
         tray_output primary
 }
 
