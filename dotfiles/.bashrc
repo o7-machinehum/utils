@@ -11,6 +11,14 @@ alias ls='ls --color=auto'
 # General shortcuts
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias rm='trash-put'
+
+# HDMI screen stuff
+alias wlkr-hdmi-on='xrandr --output HDMI-2 --above eDP-1'
+alias wlkr-hdmi-off='xrandr --output HDMI-2 --off'
+
+# Start the SSH server
+alias sshd-start='systemctl start sshd.service'
 
 # CPU Power
 alias wlkr-cpu-on-demand='sudo cpupower frequency-set -g ondemand'
@@ -32,7 +40,7 @@ alias git-submodule-init="git submodule update --init --recursive"
 alias git-submodule-update="git submodule update --recursive"
 
 alias wlkr-ssh-ots="ssh -i ~/.ssh/git_key ots@96.126.103.186"
-alias wlkr-ssh-wiki="ssh -i ~/.ssh/git_key wiki@104.200.25.106"
+alias wlkr-ssh-wiki="ssh machinehum@139.162.136.197"
 
 # alias init-ssh-key="eval '$(ssh-agent -s)' ; ssh-add ~/.ssh/git_key"
 eval $(ssh-agent -s) > /dev/null ; ssh-add ~/.ssh/git_key 2>/dev/null

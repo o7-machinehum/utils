@@ -80,6 +80,9 @@
 !*pointerColorBackground: #586e75
 !*pointerColorForeground: #93a1a1
 
+Xcursor.theme:  Adwaita
+Xcursor.size: 16
+
 *background: #002b36
 *foreground: #657b83
 !!*fading: 40

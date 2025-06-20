@@ -68,3 +68,5 @@ nnoremap K <C-w>k
 nnoremap L <C-w>l
 
 autocmd BufWritePre * %s/\s\+$//e
+
+highlight Search ctermbg=yellow ctermfg=black guibg=yellow guifg=black
