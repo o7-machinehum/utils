@@ -1,16 +1,38 @@
 #!/bin/bash
+set -euo pipefail
 
 repo_dir=$(pwd)
-ln -s $repo_dir/dotfiles/.Xmodmap ~/.Xmodmap
-ln -s $repo_dir/dotfiles/.xinitrc ~/.xinitrc
-ln -s $repo_dir/dotfiles/.bashrc ~/.bashrc
-ln -s $repo_dir/dotfiles/.Xresources ~/.Xresources
-ln -s $repo_dir/dotfiles/.bash_profile ~/.bash_profile
+dot_dir="$repo_dir/dotfiles"
 
-mkdir -p ~/.config/vim
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/alacritty
+# link <src in repo> -> <dest in $HOME>
+link() {
+  local src="$1"
+  local dst="$2"
 
-ln -s $repo_dir/dotfiles/i3/config ~/.config/i3/config
-ln -s $repo_dir/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-ln -s $repo_dir/dotfiles/vimrc ~/.vimrc
+  mkdir -p "$(dirname "$dst")"
+
+  # If already correct symlink, do nothing
+  if [[ -L "$dst" ]] && [[ "$(readlink "$dst")" == "$src" ]]; then
+    return 0
+  fi
+
+  # Backup any existing non-matching file/link
+  if [[ -e "$dst" || -L "$dst" ]]; then
+    mv -v "$dst" "${dst}.bak.$(date +%Y%m%d%H%M%S)"
+  fi
+
+  ln -s "$src" "$dst"
+}
+
+link "$dot_dir/Xmodmap"      "$HOME/.Xmodmap"
+link "$dot_dir/xinitrc"      "$HOME/.xinitrc"
+link "$dot_dir/bashrc"       "$HOME/.bashrc"
+link "$dot_dir/Xresources"   "$HOME/.Xresources"
+link "$dot_dir/bash_profile" "$HOME/.bash_profile"
+
+# XDG-ish configs
+link "$dot_dir/i3/config"          "$HOME/.config/i3/config"
+link "$dot_dir/alacritty.toml"     "$HOME/.config/alacritty/alacritty.toml"
+
+# Vim: pick one location. This keeps your current behavior.
+link "$dot_dir/vimrc"              "$HOME/.vimrc"
