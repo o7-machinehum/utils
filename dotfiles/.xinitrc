@@ -1,7 +1,9 @@
 xmodmap ~/.Xmodmap
 xrdb ~/.Xresources
 # expressvpn connect
-exec picom --experimental-backends &
+# exec picom --experimental-backends &
+fastcompmgr -o 0.4 &
+dunst &
 # exec blueman-applet &
 
 # bluetoothctl power on
@@ -22,6 +24,7 @@ xrdb /home/essex/.Xresources
 xrandr --output HDMI-2 --above eDP-1
 
 exec i3
+# exec gnome
 # exec dwm
 # xrandr --output VGA-0 --mode 1920x1080 --left-of DVI-D-0 --rotate right
 # i3-msg "workspace 1, move workspace to output DVI-D-0"
