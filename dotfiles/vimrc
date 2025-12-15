@@ -43,14 +43,18 @@ set breakindent " Tab Wrapped lines
 " Line Wrap
 set whichwrap+=<,>,h,l,[,]
 
-" For Tabs
-" set autoindent noexpandtab tabstop=4 shiftwidth=4
+" Detect indentation automatically
+filetype plugin indent on
+set autoindent
+set smarttab
 
-" For Spaces
-set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+" Follow existing file indentation
+autocmd BufReadPost * if search('^\t', 'nw') | set noexpandtab | else | set expandtab | endif
 
-" au BufWinLeave * mkview
-" au BufWinEnter * silent loadview
+" Default tab settings (adjust numbers if you like)
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 set textwidth=80 " Set text to wrap. To format text use the :gq
 
@@ -70,3 +74,23 @@ nnoremap L <C-w>l
 autocmd BufWritePre * %s/\s\+$//e
 
 highlight Search ctermbg=yellow ctermfg=black guibg=yellow guifg=black
+
+nnoremap * *``
+nnoremap * :keepjumps normal! mi*`i<CR>
+nnoremap <C-]> :sp<CR>:tag <C-R><C-W><CR>
+
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+if has("cscope")
+    cs add cscope.out
+endif
+
+" Load all packages in pack/*/start
+if has('vim_starting')
+    packloadall
+endif
+
+" Packages
+" cd ~/.vim
+" mkdir -p pack/plugins/start
+" cd pack/plugins/start
+" git clone https://github.com/tpope/vim-fugitive.git
