@@ -4,6 +4,9 @@
 # set $mod Mod1
 set $mod Mod4
 
+bindsym F5 exec --no-startup-id bash -lc 'cd /home/machinehum/the_island && ./build/client'
+bindsym F6 exec --no-startup-id bash -lc 'sudo killall server && cd /home/machinehum/the_island && ./build/server'
+
 gaps inner 10
 gaps outer 5
 

@@ -16,18 +16,28 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 wlkr_hdmi_work_on() {
     xrandr --output HDMI-1 --auto
     xrandr --output HDMI-1 --above eDP-1
-    sed -i 's/size = 7.0/size = 9.0/g' ~/.config/alacritty/alacritty.toml
+    # sed -i 's/size = 7.0/size = 9.0/g' ~/.config/alacritty/alacritty.toml
+    conf=~/.config/alacritty/alacritty.toml
+    sed -i '/^\[font\]/,/^\[/{s/^[[:space:]]*size[[:space:]]*=.*/size = 9.0/}' $conf
+}
+
+wlkr_port_mon_on() {
+    xrandr --output DP-2 --auto
+    xrandr --output DP-2 --above eDP-1
+    # sed -i 's/size = 7.0/size = 8.0/g' ~/.config/alacritty/alacritty.toml
+    conf=~/.config/alacritty/alacritty.toml
+    sed -i '/^\[font\]/,/^\[/{s/^[[:space:]]*size[[:space:]]*=.*/size = 7.0/}' $conf
 }
 
 wlkr_hdmi_off() {
+    xrandr --output DP-2 --off
     xrandr --output HDMI-1 --off
-    sed -i 's/size = 9.0/size = 7.0/g' ~/.config/alacritty/alacritty.toml
+    # sed -i 's/size = 9.0/size = 7.0/g' ~/.config/alacritty/alacritty.toml
+    conf=~/.config/alacritty/alacritty.toml
+    sed -i '/^\[font\]/,/^\[/{s/^[[:space:]]*size[[:space:]]*=.*/size = 7.0/}' $conf
 }
 
 alias wlkr_hdmi_tv_on='xrandr --output HDMI-1 --auto && xrandr --output HDMI-1 --same-as eDP-1'
-
-# Start the SSH server
-alias sshd-start='systemctl start sshd.service'
 
 # CPU Power
 alias wlkr_cpu_on_demand='sudo cpupower frequency-set -g ondemand'
@@ -45,33 +55,33 @@ copy_screen() {
     rm img.png
 }
 
-vimscp() {
-    sshpass -p blackhat scp -O root@192.168.1.107:/bin/bh . &&
-    fname="${1##*/}"
-    vim $fname
-    sshpass -p blackhat scp -O $fname root@192.168.1.107:/$1
-}
-
 alias git-submodule-init="git submodule update --init --recursive"
 alias git-submodule-update="git submodule update --recursive"
 
 alias wlkr_ssh_ots="ssh -i ~/.ssh/git_key ots@96.126.103.186"
 alias wlkr_ssh_wiki="ssh machinehum@139.162.136.197"
 
-# alias init-ssh-key="eval '$(ssh-agent -s)' ; ssh-add ~/.ssh/git_key"
-eval $(ssh-agent -s) > /dev/null ; ssh-add ~/.ssh/git_key 2>/dev/null
-eval $(ssh-agent -s) > /dev/null ; ssh-add ~/.ssh/id_ed25519 2>/dev/null
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR:-/tmp}/ssh-agent-$UID.sock"
 
-export EDITOR=vim
+# Start agent ONLY if there is no agent (exit code 2)
+ssh-add -l >/dev/null 2>&1
+rc=$?
+if [ $rc -eq 2 ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
+  rm -f "$SSH_AUTH_SOCK" 2>/dev/null
+  eval "$(ssh-agent -a "$SSH_AUTH_SOCK" -s)" >/dev/null
+fi
+
+# Load keys (quiet). If already loaded, ssh-add is a no-op.
+ssh-add -q ~/.ssh/git_key ~/.ssh/id_ed25519 2>/dev/null
+
+export EDITOR=nvim
+alias vi=vim
+alias vim=nvim
+
 export PATH=~/.local/bin:"$PATH"
 
 wlkr_rem_colour() {
     cat $1 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
-}
-
-# 0 -> 100
-wlkr_set_brightness() {
-    echo $((647*$1))| sudo tee /sys/class/backlight/amdgpu_bl1/brightness
 }
 
 alias cscope="cscope -p10 "
@@ -82,7 +92,6 @@ alias git-name-il="git config --global user.name 'Ryan Walker' ; git config --gl
 alias git-name-github="git config --global user.name 'o7-machinehum' ; git config --global user.email ryan.cjw@gmail.com"
 alias git-name-zephyr="git config --global user.name 'Ryan Walker' ; git config --global user.email ryan.cjw@gmail.com"
 
-alias vi=vim
 
 export TERM=xterm-256color
 
@@ -97,3 +106,42 @@ function paste() {
 }
 
 alias cat=bat
+
+# Enable vim mode
+set -o vi
+bind '"\C-l": clear-screen'
+
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+
+vimfd() {
+    fd -0 "$1" | xargs -0 vim -p -- "${@:2}"
+}
+
+# WINGTRA
+alias wingtra-devcontainer-up="devcontainer exec --workspace-folder . -- bash"
+alias wingtra-devcontainer-rebuild="devcontainer up --remove-existing-container --workspace-folder ."
+alias wingtra-ssh-pi="ssh pi@192.168.1.51"
+alias wingtra-tx-en-pi="/home/machinehum/wingtra/pacflyer_PX4/PX4/Tools/wudi.py fmu && /home/machinehum/wingtra/pacflyer_PX4/PX4/Tools/wudi.py enable_tx"
+alias wingtra-explorer="cd /home/machinehum/wingtra/WingtraExplorer && uv run wingtra_explorer.py"
+
+# Merge compile_commands.json from build dir(s) and fix paths for clangd
+# Usage: wlkr_clangd_fix [target_filter]
+#   e.g. wlkr_clangd_fix ray-fmu
+function wlkr_clangd_fix () {
+  local target=${1:-}
+
+  if [ -n "$target" ]; then
+      local files=$(find build -path "*${target}*" -name compile_commands.json)
+  else
+      local files=$(find build -name compile_commands.json)
+  fi
+
+  if [ -z "$files" ]; then
+      echo "No compile_commands.json found"
+      return 1
+  fi
+
+  echo "$files" | xargs jq -s 'add' | sed "s|/workspaces/[^/]*/PX4|$PWD|g" > compile_commands.json
+  echo "Merged $(echo "$files" | wc -l) compile_commands.json from:"
+  echo "$files"
+}

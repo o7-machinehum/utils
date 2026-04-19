@@ -36,3 +36,7 @@ link "$dot_dir/alacritty.toml"     "$HOME/.config/alacritty/alacritty.toml"
 
 # Vim: pick one location. This keeps your current behavior.
 link "$dot_dir/vimrc"              "$HOME/.vimrc"
+link "$dot_dir/init.lua"           "$HOME/.config/nvim/init.lua"
+
+
+link "$dot_dir/ripgreprc" "$HOME/.config/ripgrep/ripgreprc"

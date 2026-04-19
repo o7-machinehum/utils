@@ -1,0 +1,4 @@
+--glob=!tags
+--glob=!**/tags
+--glob=!tags.*
+--glob=!**/tags.*
