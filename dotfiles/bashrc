@@ -145,3 +145,17 @@ function wlkr_clangd_fix () {
   echo "Merged $(echo "$files" | wc -l) compile_commands.json from:"
   echo "$files"
 }
+
+wlkr_rotate_screen() {
+    xrandr --output eDP-1 --rotate inverted
+    xinput set-prop "Wacom Pen and multitouch sensor Pen Pen (0xb48f2fa1)" "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+    xinput set-prop "Wacom Pen and multitouch sensor Pen Eraser (0xb48f2fa1)" "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+    xinput set-prop "Wacom Pen and multitouch sensor Finger" "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+}
+
+wlkr_rotate_screen_back() {
+    xrandr --output eDP-1 --rotate normal
+    xinput set-prop "Wacom Pen and multitouch sensor Pen Pen (0xb48f2fa1)" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+    xinput set-prop "Wacom Pen and multitouch sensor Pen Eraser (0xb48f2fa1)" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+    xinput set-prop "Wacom Pen and multitouch sensor Finger" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+}
