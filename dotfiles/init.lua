@@ -3,6 +3,14 @@ if not vim.g._vimrc_loaded then
   vim.cmd("source ~/.vimrc")
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    pcall(vim.treesitter.stop, 0)
+    vim.bo.syntax = "markdown"
+  end,
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if vim.fn.isdirectory(lazypath) == 0 then
   vim.fn.system({ "git", "clone", "--filter=blob:none",
@@ -14,6 +22,27 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "ibhagwan/fzf-lua",
   "tpope/vim-fugitive",
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {
+      open_mapping = [[<C-\>]],
+      direction = "float",
+      start_in_insert = true,
+      persist_size = true,
+      float_opts = {
+        border = "curved",
+      },
+    },
+  },
+})
+
+require("fzf-lua").setup({
+  grep = {
+    rg_glob = true,
+    glob_flag = "--iglob",
+    glob_separator = "%s%-%-",
+  },
 })
 
 vim.opt.clipboard = "unnamedplus"
@@ -26,6 +55,7 @@ cmd("S", "FzfLua blines",     {})
 cmd("B", "FzfLua buffers",    {})
 cmd("H", "FzfLua oldfiles",   {})
 cmd("E", "Explore", {})
+cmd("T", "ToggleTerm", {})
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
@@ -63,6 +93,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition)
 
 -- Terminal navigation
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set('t', '<C-w>h', '<C-\\><C-n><C-w>h')
 vim.keymap.set('t', '<C-w>j', '<C-\\><C-n><C-w>j')
 vim.keymap.set('t', '<C-w>k', '<C-\\><C-n><C-w>k')

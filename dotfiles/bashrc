@@ -12,6 +12,8 @@ alias ls='ls --color=auto'
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
+alias wlkr_eyes='redshift -P -O 3100'
+
 # HDMI screen stuff
 wlkr_hdmi_work_on() {
     xrandr --output HDMI-1 --auto
@@ -44,6 +46,8 @@ alias wlkr_cpu_on_demand='sudo cpupower frequency-set -g ondemand'
 alias wlkr_cpu_full_power='sudo cpupower frequency-set -g performance'
 alias wlkr_cpu_low_power='sudo cpupower frequency-set -g powersave'
 alias wlkr_cpu_speed='watch -n.1 "grep \"^[c]pu MHz\" /proc/cpuinfo"'
+
+alias nmtui='nmcli device wifi list && \nmtui'
 
 copy_file() {
     xclip -selection clipboard -t image/png -i $1
@@ -159,3 +163,5 @@ wlkr_rotate_screen_back() {
     xinput set-prop "Wacom Pen and multitouch sensor Pen Eraser (0xb48f2fa1)" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
     xinput set-prop "Wacom Pen and multitouch sensor Finger" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
 }
+
+alias wlkr_bt="bluetoothctl"

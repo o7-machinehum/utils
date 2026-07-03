@@ -23,6 +23,9 @@ xinput set-prop 'TPPS/2 IBM TrackPoint' 'libinput Accel Speed' 0.4
 xrdb /home/essex/.Xresources
 xrandr --output HDMI-2 --above eDP-1
 
+systemctl --user import-environment DISPLAY XAUTHORITY
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
 exec i3
 # exec gnome
 # exec dwm
